@@ -1,5 +1,7 @@
 import bg from "./assets/bg-image.jpg"
 import { MotionCard } from "./components/motionCard"
+import { DiscordIcon } from "./icons/discord"
+import { GithubIcon } from "./icons/github"
 import { SpotifyIcon } from "./icons/spoti"
 import { TwitterIcon } from "./icons/twt"
 
@@ -19,9 +21,11 @@ function App() {
       </div>
     </header>
     <main>
-      <div className="flex justify-center items-center">
-        <MotionCard  icon={<TwitterIcon/>}/>
-        <MotionCard icon={<SpotifyIcon/>}/>
+      <div className="flex justify-center items-center gap-2">
+        <MotionCard color="blue"  icon={<TwitterIcon/>}/>
+        <MotionCard color="green" icon={<SpotifyIcon/>}/>
+        <MotionCard color="gray" icon={<GithubIcon/>}/>
+        <MotionCard color="dark-blue" icon={<DiscordIcon/>}/>
       </div>
     </main>
   </div>

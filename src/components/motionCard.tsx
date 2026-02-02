@@ -1,9 +1,17 @@
 import { motion } from "framer-motion"
 import type { ReactElement } from "react"
 interface iconInterface {
-    icon? : ReactElement
+    icon? : ReactElement,
+    color : "green" | "blue" | "gray" | "dark-blue"
 }
-export const MotionCard = ({ icon }: iconInterface) => {
+
+const bgStyle = {
+    "green" : "bg-green-400",
+    "blue" : "bg-blue-200",
+    "gray" : "bg-gray-100",
+    "dark-blue" : "bg-blue-600"
+}
+export const MotionCard = ({ icon, color }: iconInterface) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -16,18 +24,19 @@ export const MotionCard = ({ icon }: iconInterface) => {
         duration: 0.4,
         ease: "easeOut",
       }}
-      className="
+      className={`
         border border-cyan-400/30
         bg-black/40
         backdrop-blur-sm
         p-2
         rounded-sm
+        w-full
         max-w-48
-        bg-blue-200
+        ${bgStyle[color]}
         flex 
-        justiy-center
+        justify-center
         item-center
-      "
+      `}
     >
       {icon}
     </motion.div>
