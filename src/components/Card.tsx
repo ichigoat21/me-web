@@ -9,10 +9,10 @@ import { VimIcon } from "../techicons/vim"
 import { ReactIcon } from "../techicons/react"
 import { ArchIcon } from "../techicons/arch"
 import { GitIcon } from "../techicons/git"
-import { div } from "framer-motion/client"
+
 
 interface cardProps {
-    type : "About" | "Stack"
+    type : "About" | "Stack" 
     title? : string
     list1? : string,
     list2? : string,
@@ -44,16 +44,14 @@ const container = {
   
 
 export function MotionCard({title, list1, list2, list3, text, type} : cardProps){
-    return <motion.div className="
-    flex flex-col justify-center gap-3 h-full w-78 rounded-md
+    return <motion.div className=" flex flex-col gap-3 w-78 rounded-md
     bg-[#020617]/80 backdrop-blur-xl
     border border-cyan-400/30
-    shadow-[0_0_30px_rgba(34,211,238,0.2)]
-    ">
-        <div className="flex justify-center">
-            <p className="text-2xl font-bold text-white">{title}</p>
+    shadow-[0_0_30px_rgba(34,211,238,0.2)] h-88 justify-center">
+        <div className="flex justify-center mb-5">
+            <p className="text-2xl font-bold text-white">{title}</p> 
         </div>
-        {type === "About" && <div> <ul className="px-2">
+        {type === "About" && <div> <ul className="px-2 ">
             <li className="text-white">{list1}</li>
             <li className="text-white">{list2}</li>
             <li className="text-white">{list3}</li>

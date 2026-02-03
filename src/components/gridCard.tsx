@@ -2,14 +2,18 @@ import { motion } from "framer-motion"
 import type { ReactElement } from "react"
 interface iconInterface {
     icon? : ReactElement,
-    color : "green" | "blue" | "gray" | "dark-blue"
+    color : "green" | "blue" | "gray" | "dark-blue" | "white" | "black" | "pink" | "dark"
 }
 
 const bgStyle = {
     "green" : "bg-green-400",
     "blue" : "bg-blue-200",
     "gray" : "bg-gray-100",
-    "dark-blue" : "bg-blue-600"
+    "dark-blue" : "bg-blue-600",
+    "white" : "bg-white",
+    "black" : "bg-[#18212d]",
+    "pink" : "bg-pink-600",
+    "dark" : "bg-gray-600"
 }
 export const MotionGridCard = ({ icon, color }: iconInterface) => {
   return (
@@ -35,7 +39,7 @@ export const MotionGridCard = ({ icon, color }: iconInterface) => {
         ${bgStyle[color]}
         flex 
         justify-center
-        item-center
+        items-center
       `}
     >
       {icon}
