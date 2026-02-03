@@ -11,7 +11,7 @@ const bgStyle = {
     "gray" : "bg-gray-100",
     "dark-blue" : "bg-blue-600"
 }
-export const MotionCard = ({ icon, color }: iconInterface) => {
+export const MotionGridCard = ({ icon, color }: iconInterface) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
