@@ -1,6 +1,6 @@
 
 
-import synapse from "../assets/Screenshot From 2026-02-16 00-48-46.png"
+import synapse from "../assets/Screenshot From 2026-02-16 10-02-15.png"
 
 export default function SynapseBanner(){
     return <div>

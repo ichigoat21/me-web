@@ -26,7 +26,7 @@ export function ProjectSection({variant, name, heading, descript, image, github,
                 flex-col
                 items-center
                 justify-center
-                w-80 md:90 h-60 md:h-60 px-6 py-4
+                w-80 md:w-150 h-60 md:h-100 px-6 py-4
                 ${variantStyle[variant]}
                 rounded-md
                 transition
@@ -46,8 +46,8 @@ export function ProjectSection({variant, name, heading, descript, image, github,
         </div>
     </div>
     <div>
-        <div className="w-80 h-60 bg-black flex flex-col items-center justify-center">
-            <p className="text-white font-display text-md overflow-hidden">
+        <div className="w-80 md:w-150 h-60 bg-black flex flex-col items-center justify-center">
+            <p className="text-white font-display text-lg overflow-hidden">
             {descript}
             </p>
             <div className="w-full flex items-center justify-center text-white text-sm space-x-2 my-3">

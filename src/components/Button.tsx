@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 interface buttonProps{
-    title : string
+    title? : string
 }
 
 export function Button({title} : buttonProps){
