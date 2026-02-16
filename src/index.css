@@ -4,3 +4,15 @@
 @theme {
   --font-display : "Special Gothic Condensed One", sans-serif;
 }
+
+.nav-item {
+  @apply text-sm text-white/70 cursor-pointer transition;
+}
+
+.nav-item:hover {
+  @apply text-white;
+}
+
+.nav-item:hover {
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}

@@ -3,8 +3,10 @@ import FlowBanner from "./banners/flowboard"
 import SynapseBanner from "./banners/synapse"
 import { MotionCard } from "./components/Card"
 import { MotionGridCard } from "./components/gridCard"
+import { HeroSection } from "./components/heroSection"
 import { ProjectSection } from "./components/Project"
 import { AnilistIcon } from "./icons/anillist"
+import { BoltIcon } from "./icons/bolt"
 import { ChessIcon } from "./icons/chess"
 import { DiscordIcon } from "./icons/discord"
 import { GithubIcon } from "./icons/github"
@@ -17,30 +19,34 @@ function App() {
   
 
   return <div className="min-h-screen w-full bg-cover bg-center overflow-x-hidden bg-black">
-    <header className="flex items-center justify-between px-10 md:px-20 py-10 gap-2">
+    <header className="fixed w-screen flex items-center justify-between px-10 md:px-20 py-10 gap-2">
       <div className="flex">
       <div className="flex items-center ">
-      <p className="text-3xl text-white font-display">shiv</p>
+      <p className="text-3xl text-white font-display"><BoltIcon/></p>
       </div>
       </div>
       <div className="text-white">
-       {new Date().toLocaleDateString()}
+      <ul
+        className="
+          hidden md:flex items-center gap-6
+          px-6 py-3
+          rounded-full
+          bg-neutral-900/80
+          backdrop-blur
+          shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_8px_30px_rgba(0,0,0,0.8)]
+          border border-white/5
+         "
+       >
+         <li className="nav-item">About</li>
+         <li className="nav-item">Contact</li>
+         <li className="nav-item">Socials</li>
+       </ul>
+
       </div>
     </header>
     <main className="flex flex-col items-center justify-center">
-
+      <HeroSection/>
       
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 place-items-center gap-5">
-        <MotionCard 
-        type="About"
-        list1="- full stack dev building cool shit" 
-        list2="- 20, working solo"
-        list3="- keen interests in cse core and algos"
-        text="Say Hello"
-        title="About me"
-        />
-        <MotionCard type="Stack" title="Tech Stack"/>
-      </div>
       <div>
 
          <ProjectSection variant="blue" name="Kanban-Board" heading="Real time task Management Platform for team works to collaborate." descript="A real-time task management and collaboration workspace designed for teams to plan, track, and execute work in sync. It supports live task updates, image and PDF file uploads, and dynamic progress visualization using Chart.js." image={<FlowBanner/>} github="https://github.com/ichigoat21/synapse" live="https://synapse-5z35.vercel.app/" />    
