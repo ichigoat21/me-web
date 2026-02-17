@@ -27,7 +27,7 @@ export function SocialSection() {
 
         {/* Social Grid */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
