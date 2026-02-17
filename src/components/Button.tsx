@@ -15,7 +15,7 @@ export function Button({title} : buttonProps){
       duration: 0.2,
       ease: "easeOut",
     }}
-     className="bg-blue-200 px-4 py-2 rounded-md cursor-pointer">
+     className="bg-blue-500 w-full font-sans font-semibold px-4 py-2 rounded-md cursor-pointer">
         {title}
     </motion.button>
 }

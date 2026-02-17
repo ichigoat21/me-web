@@ -9,7 +9,7 @@ const bgStyle = {
     "green" : "bg-green-400",
     "blue" : "bg-blue-200",
     "gray" : "bg-gray-100",
-    "dark-blue" : "bg-blue-600",
+    "dark-blue" : "bg-blue-800",
     "white" : "bg-white",
     "black" : "bg-[#18212d]",
     "pink" : "bg-pink-600",
