@@ -1,83 +1,118 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { InputComponent } from "../components/Input";
 import { TextComponent } from "../components/textarea";
 import { Button } from "../components/Button";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
+
+interface StatusMessage {
+  type: 'success' | 'error' | '';
+  message: string;
+}
 
 export function ContactSection() {
-  const nameRef = useRef<HTMLInputElement | null>(null);
-  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+  const form = useRef<HTMLFormElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [status, setStatus] = useState<StatusMessage>({ type: '', message: '' });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setStatus({ type: '', message: '' });
+
+    if (!form.current) {
+      setStatus({ 
+        type: 'error', 
+        message: 'Form reference not found.' 
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      console.log('Sending email with form data:', {
+        service: 'service_81k5j2d',
+        template: 'template_07cvtkx',
+        formData: new FormData(form.current)
+      });
+
+      const result = await emailjs.sendForm(
+        'service_81k5j2d',     
+        'template_07cvtkx',     
+        form.current,
+        'ckxzk4EZ2bgHxC1DU'       
+      );
+
+      console.log('Email sent successfully:', result);
+      setStatus({ 
+        type: 'success', 
+        message: 'Message sent successfully! I\'ll get back to you soon.' 
+      });
+      
+      form.current.reset();
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setStatus({ 
+        type: 'error', 
+        message: `Failed to send message: ${error instanceof Error ? error.message : 'Unknown error'}` 
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
-       
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="space-y-4"
-        >
-          <motion.h2
-            className="text-6xl md:text-7xl font-bold text-white leading-tight  font-display"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Let's work
-            <br />
-            <span className="text-gray-500  font-display">together</span>
-          </motion.h2>
-          <motion.p
-            className="text-gray-400 text-lg"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Got a project in mind? Drop me a message and let's create something amazing.
-          </motion.p>
-        </motion.div>
+    <section className="contact-section py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-2xl mx-auto"
+      >
+        <h2 className="text-3xl font-bold mb-4">Let's work together</h2>
+        <p className="mb-8 text-gray-300">Got a project in mind? Drop me a message and let's create something amazing.</p>
 
-      
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <InputComponent placeholder="Name" reference={nameRef} />
-          </motion.div>
+        <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+          <InputComponent
+            ref={nameRef}
+            name="user_name"
+            type="text"
+            placeholder="Your Name"
+            required
+          />
+          
+          <InputComponent
+            name="user_email"
+            type="email"
+            placeholder="Your Email"
+            required
+          />
+          
+          <TextComponent
+            ref={messageRef}
+            name="message"
+            placeholder="Your Message"
+            required
+          />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <TextComponent placeholder="Message" reference={messageRef} />
-          </motion.div>
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? 'Sending...' : 'Send Message'}
+          </Button>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="pt-2"
-          >
-            <Button title="SEND MESSAGE" />
-          </motion.div>
-        </motion.div>
-      </div>
-    </div>
+          {status.message && (
+            <div className={`mt-4 p-4 rounded-lg text-center ${
+              status.type === 'success' 
+                ? 'bg-green-500/20 text-green-300 border border-green-500/30' 
+                : 'bg-red-500/20 text-red-300 border border-red-500/30'
+            }`}>
+              {status.message}
+            </div>
+          )}
+        </form>
+      </motion.div>
+    </section>
   );
 }
