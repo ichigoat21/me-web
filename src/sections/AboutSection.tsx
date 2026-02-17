@@ -78,11 +78,11 @@ export function AboutSection() {
                 </div>
                 
                 <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                  Your Article Title Here
+                  Small Checkpoint- A year and a half in code.
                 </h3>
                 
                 <p className="text-gray-400 text-sm line-clamp-3 mb-4">
-                  Add a brief description or excerpt from your Medium article here to give readers a preview of what they'll find.
+                  My first Blog on Medium, describes my early struggles and shortcomings i faced when i was starting out.
                 </p>
 
                 <div className="flex items-center justify-between">
