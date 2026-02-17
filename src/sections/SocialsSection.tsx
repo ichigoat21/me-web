@@ -46,8 +46,6 @@ export function SocialSection() {
         <a href="https://linkedin.com/in/shivansh-s-a063993ab" target="_blank"> <MotionGridCard color="dark-blue" icon={<DiscordIcon />} /></a>
         <a href="https://anilist.co/user/badanniversary/" target="_blank"> <MotionGridCard color="black" icon={<AnilistIcon />} /></a>
         <a href="https://www.instagram.com/snkxq/" target="_blank"><MotionGridCard color="pink" icon={<GramIcon />} /></a>
-        <a href="https://letterboxd.com/inclinedu/" target="_blank"> <MotionGridCard color="dark" icon={<LboxIcon />} /></a>
-        <a href="https://www.chess.com/member/snkxq"  target="_blank"><MotionGridCard color="white" icon={<ChessIcon />} /></a>
         </motion.div>
 
         {/* Footer */}
