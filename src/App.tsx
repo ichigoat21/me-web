@@ -3,6 +3,7 @@ import { ProjectSection } from "./sections/projectSection"
 import { SocialSection } from "./sections/SocialsSection"
 import { ContactSection } from "./sections/contactSection"
 import { NavSection } from "./sections/NavSection"
+import { AboutSection } from "./sections/AboutSection"
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -20,6 +21,9 @@ function App() {
     <main className="pt-20">
       <section id="hero">
         <HeroSection onNavigate={scrollToSection} />
+      </section>
+      <section id="about">
+        <AboutSection />
       </section>
       
       <section id="projects" className="w-full">
