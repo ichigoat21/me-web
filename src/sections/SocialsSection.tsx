@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import { MotionGridCard } from "../components/gridCard";
 import { AnilistIcon } from "../icons/anillist";
-import { ChessIcon } from "../icons/chess";
 import { DiscordIcon } from "../icons/discord";
 import { GithubIcon } from "../icons/github";
 import { GramIcon } from "../icons/insta";
-import { LboxIcon } from "../icons/letterboxd";
 import { SpotifyIcon } from "../icons/spoti";
 import { TwitterIcon } from "../icons/twt";
 
