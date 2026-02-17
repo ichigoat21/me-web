@@ -1,5 +1,4 @@
 import { HeroSection } from "./sections/heroSection"
-import { AboutSection } from "./sections/AboutSection"
 import { ProjectSection } from "./sections/projectSection"
 import { SocialSection } from "./sections/SocialsSection"
 import { ContactSection } from "./sections/contactSection"
@@ -21,10 +20,6 @@ function App() {
     <main className="pt-20">
       <section id="hero">
         <HeroSection onNavigate={scrollToSection} />
-      </section>
-
-      <section id="about" className="w-full">
-        <AboutSection />
       </section>
       
       <section id="projects" className="w-full">

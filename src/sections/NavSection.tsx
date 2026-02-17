@@ -10,7 +10,7 @@ export function NavSection({ onNavigate }: NavSectionProps) {
   return (
     <>
       <motion.div 
-        className="flex items-center"
+        className="hidden md:flex items-center"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
