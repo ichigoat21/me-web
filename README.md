@@ -18,14 +18,7 @@ This site reflects my journey, my design taste, and the kind of problems I love 
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-
-**Backend**
-- Node.js
-- Express
-- MongoDB
-- JWT Authentication
-- WebSockets (for real-time features)
-
+- 
 **Tooling**
 - Git & GitHub
 - Vite / Next.js tooling
