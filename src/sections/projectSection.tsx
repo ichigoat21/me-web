@@ -40,8 +40,8 @@ export function ProjectSection() {
               heading="Real time task Management Platform for team works to collaborate."
               descript="A real-time task management and collaboration workspace designed for teams to plan, track, and execute work in sync. It supports live task updates, image and PDF file uploads, and dynamic progress visualization using Chart.js."
               image={<FlowBanner />}
-              github="https://github.com/ichigoat21/synapse"
-              live="https://synapse-5z35.vercel.app/"
+              github="https://github.com/ichigoat21/flowboard"
+              live="https://flowboardmanager.vercel.app/"
             />
           </motion.div>
 
@@ -57,8 +57,8 @@ export function ProjectSection() {
               heading="Real time collaborative web canvas"
               descript="A real-time, multi-user collaborative canvas application architected for low-latency interaction and scalable development. Built within a Turborepo-based monorepo, it enables shared tooling and consistent builds across services. The system uses JWT-based authentication, a strongly typed database layer, and real-time WebSocket communication to synchronize canvas state across multiple users with minimal delay and high consistency."
               image={<CanvasBanner />}
-              github="https://github.com/ichigoat21/synapse"
-              live="https://synapse-5z35.vercel.app/"
+              github="https://github.com/ichigoat21/excalidraw-clone"
+              live="https://excalidraw-clone-web.vercel.app/"
             />
           </motion.div>
 
